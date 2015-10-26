@@ -4,12 +4,13 @@ import org.apache.spark.SparkContext
 import java.io.File
 
 /**
- * Top 10 dates on which maximum movied added.
+ * Top 10 dates on which maximum movies added.
  * @author mangeeteden
  */
 object Top10DatesOnWhichMostMoviesAdded {
 
   def main(args: Array[String]) {
+    
     val sc = new SparkContext()
 
     val home = System.getProperty("user.home")

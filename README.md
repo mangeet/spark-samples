@@ -1,6 +1,8 @@
 # spark-samples
 
-Various Samples using Spark computing from basic to advance.
+Various Samples using Spark Distributed Computing from basic to advance.
+
+** Please install Apache Spark Distribution from http://spark.apache.org/downloads.html
 
 Here are the steps to set-up your env and execute each sample:
 

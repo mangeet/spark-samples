@@ -7,7 +7,7 @@ import java.io.File
  * Count the number of movies per each added date.
  * @author mangeeteden
  */
-object MoviesCountByAddedDate {
+object MoviesCountByActor {
 
   def main(args: Array[String]) {
     val sc = new SparkContext()
@@ -16,10 +16,10 @@ object MoviesCountByAddedDate {
     val movies = sc.textFile(s"$home/videos_by_actor.csv")
 
     // converting each movie row to pair RDD with date as key and complete row as value
-    val moviesByDate = movies.map { movie => (movie.split(",")(1), 1) }
-    val moviesCountByEachDate = moviesByDate.reduceByKey((a, b) => a+b)
-    val moviesCountBySortedDate = moviesCountByEachDate.sortByKey()
-    moviesCountBySortedDate.saveAsTextFile(s"$home/MoviesCountByAddedDate")
-    println("Collected count of all movies by date in file." + s"$home/MoviesCountByAddedDate")
+    val moviesByActor = movies.map { movie => (movie.split(",")(0), 1) }
+    val moviesCountByEachActor = moviesByActor.reduceByKey((a, b) => a+b)
+    val moviesCountBySortedActor = moviesCountByEachActor.sortByKey()
+    moviesCountBySortedActor.saveAsTextFile(s"$home/MoviesCountByActor")
+    println("Collected count of all movies by date in file." + s"$home/MoviesCountByActor")
   }
 }

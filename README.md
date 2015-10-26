@@ -20,4 +20,6 @@ Samples:
 - MoviesCount
 - MoviesCountByAddedDate
 - Top10DatesOnWhichMostMoviesAdded
+- MoviesCountByActor
+- Top2ActorsWithMaxMovies
 

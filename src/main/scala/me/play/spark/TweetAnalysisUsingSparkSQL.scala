@@ -10,7 +10,7 @@ import org.apache.spark.sql.hive.HiveContext
  * Uses Spark SQL to analyze tweets like user of max retweet count etc
  * @author mangeeteden
  */
-object TweetAnalyticsUsingSparkSQL {
+object TweetAnalysisUsingSparkSQL {
 
   def main(args: Array[String]): Unit = {
 

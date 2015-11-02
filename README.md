@@ -12,8 +12,10 @@ Here are the steps to set-up your env and execute each sample:
 3. Package this project. (Uber jar)
    mvn package
 4. Go to your Spark home and execute:
+    
+   Example:-
 
-   ./bin/spark-submit --class me.play.spark.<ClassName> <your-workspace>/spark-samples/target/spark-samples-0.0.1-SNAPSHOT.jar
+   ./bin/spark-submit --class me.play.spark.TweetAnalyticsUsingSparkSQL <your-workspace>/spark-samples/target/spark-samples-0.0.1-SNAPSHOT.jar
 
    This script will ship programme to cluster(local in above script) and compute the results by executing tasks for each RDD partition.
 
@@ -24,4 +26,4 @@ Samples:
 - Top10DatesOnWhichMostMoviesAdded
 - MoviesCountByActor
 - Top2ActorsWithMaxMovies
-
+- TweetAnalyticsUsingSparkSQL

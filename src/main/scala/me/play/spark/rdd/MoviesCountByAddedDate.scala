@@ -1,7 +1,8 @@
-package me.play.spark
+package me.play.spark.rdd
 
 import org.apache.spark.SparkContext
-import java.io.File
+import org.apache.spark.rdd.RDD.rddToOrderedRDDFunctions
+import org.apache.spark.rdd.RDD.rddToPairRDDFunctions
 
 /**
  * Count the number of movies per each added date.

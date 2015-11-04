@@ -15,7 +15,7 @@ Here are the steps to set-up your env and execute each sample:
     
    Example:-
 
-   ./bin/spark-submit --class me.play.spark.TweetAnalysisUsingSparkSQL <your-workspace>/spark-samples/target/spark-samples-0.0.1-SNAPSHOT.jar
+   ./bin/spark-submit --class me.play.spark.dataframe.TweetAnalysisUsingSparkSQL <your-workspace>/spark-samples/target/spark-samples-0.0.1-SNAPSHOT.jar
 
    This script will ship programme to cluster(local in above script) and compute the results by executing tasks for each RDD partition.
 

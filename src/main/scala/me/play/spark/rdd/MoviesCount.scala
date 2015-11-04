@@ -1,7 +1,6 @@
-package me.play.spark
+package me.play.spark.rdd
 
 import org.apache.spark.SparkContext
-import java.io.File
 
 /**
  * Counts the number of movies available in source file.

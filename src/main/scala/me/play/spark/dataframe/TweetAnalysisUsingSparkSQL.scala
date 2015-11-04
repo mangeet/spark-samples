@@ -1,4 +1,4 @@
-package me.play.spark
+package me.play.spark.dataframe
 
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
@@ -14,15 +14,19 @@ object TweetAnalysisUsingSparkSQL {
 
   def main(args: Array[String]): Unit = {
 
+    // Spark Configurations to configure Cassandra Host(user name and password if required)
     val conf = new SparkConf(true).setAppName("TweetAnalyticsUsingSparkSQL").set("spark.cassandra.connection.host", "127.0.0.1");
     val sc = new SparkContext(conf)
 
+    // Connect with cassandra keyspace and table to get Cassandra Rows
     val cassandraRows = sc.cassandraTable("play", "tweets")
     val tweetsJsonRDD = cassandraRows.map { row => new String(row.get[ByteBuffer]("tweet").array()) }
 
+    // building HiveContext and converting RDD -> DataFrame
     val hc = new HiveContext(sc)
     val tweetJsonDataFrame = hc.jsonRDD(tweetsJsonRDD)
 
+    // Registering DataFrame as Temp Table, so that we can execute Queries on that
     tweetJsonDataFrame.registerTempTable("tweets")
     tweetJsonDataFrame.cache()
 
